@@ -33,3 +33,21 @@ function createSupportTicket(customer, issue, priority) {
     resolveBtn.textContent = 'Resolve';
     ticketCard.append(resolveBtn); 
     
+// Task 3 - converting nodelists to array for bulk
+
+// Highlight high-priority tickets
+if (priorityLevel.toLowerCase() === "high") {
+    ticket.classList.add("high-priority");
+}
+    // Append the ticket to the ticketContainer
+    document.getElementById("ticketContainer").appendChild(ticket);
+}
+function highlightHighPriorityTickets() {
+    const tickets = Array.from(document.querySelectorAll(".support-ticket"));
+    tickets.forEach(ticket => {
+        const priorityLabel = ticket.querySelector(".priority-label");
+        if (priorityLabel && priorityLabel.textContent.includes("High")) {
+            ticket.classList.add("high-priority");
+        }
+    });
+}
