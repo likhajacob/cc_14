@@ -1,36 +1,35 @@
-// Task 2 - Adding support tickets dynamically
+//Task 2 - Adding support tickets dynamically
 function createSupportTicket(customer, issue, priority) {
-    //support ticket will be added
     let divTicketContainer = document.getElementById('ticketContainer');
-   //new div element
+    //support ticket div element
     const ticketCard = document.createElement('div');
     ticketCard.setAttribute('class','ticket-card');
-    //putting in customer info
-    const custName = document.createElement('h2');
+    //putting customer info
+    const custName = document.createElement('h3');
     custName.setAttribute('class', 'ticket-header');
     custName.textContent = customer;
     ticketCard.append(custName);
-   
-    //putting paragraph of issue
+    
+    //issue paragraph adding
     const issueDesc = document.createElement('p');
     issueDesc.setAttribute('class', 'issue-description');
     issueDesc.textContent = issue;
     ticketCard.append(issueDesc);
 
-    //Adding a label to show priority of issue
+    //label to show priority
     const priorityLabel = document.createElement('p');
     priorityLabel.setAttribute('class', 'priority-label');
     priorityLabel.textContent = `Priority: ${priority}`;
-   
-    //non-high priority
+    
+    //priority ticket inputting
     ticketCard.classList.add('other-priority');
-   
-    //priority text to the ticket
+    
+    //Text of priority label
     ticketCard.append(priorityLabel);
 
-    //Adding a button that customer can click to resolve the ticket
+    //Button adding to resolve issue
     const resolveBtn = document.createElement('button');
     resolveBtn.setAttribute('class', 'resolve-btn');
     resolveBtn.textContent = 'Resolve';
-    ticketCard.append(resolveBtn);
-
+    ticketCard.append(resolveBtn); 
+    
